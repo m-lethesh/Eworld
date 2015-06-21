@@ -1,0 +1,59 @@
+<html>
+<center><body background="register.jpg" align="center" margin="100px">
+     <form style="position:absolute" method="post" action="page1.php">
+                       <img src="register.png " >
+    <!--username--> <div style="margin-left:40px">  <div class="line" align="left"><label for="username" id="username">Username*: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type="text" name="uname" id="username" /></div><br>
+   <!--password -->          <div class="line"align="left"><label for="pwd">Password*: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type="password" id="pwd" /></div><br>
+    <!--retype pwd --> <div class="line"align="left"><label for="pwd">reEnter-Password*: &nbsp&nbsp&nbsp&nbsp</label><input type="password" id="repwd" /></div><br>
+              
+   <!--surname-->   <div class="line"align="left"><label for="surname">Surname*:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label><input type="text" id="surname" /></div> <br>
+  <!--DOB-->         <div class="line"align="left"><label for="dob">Date of Birth*:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label><input type="text" id="dob" /> (In: DD/MM/YYYY)</div><br>
+ <!--sex-->	   <div align="left" >Sex: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="sex" value="male">Male
+                 <input type="radio" name="sex" value="female">Female</div><br>
+  <!--email  -->         <div class="line"align="left"><label for="email">Email*: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type="email" id="email" /></div><br>
+         
+  <!--telephone-->       <div class="line"align="left"><label for="tel">Telephone:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label><input type="text" id="tel" /></div><br>
+ <!--address-->               <div class="line"align="left"><label for="add">Address*: <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<textarea rows="4" cols="30"id="address"></textarea></div><br>
+  <!--postecode  -->           <div class="line"align="left"><label for="ptc">Post Code*: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type="text" id="ptc" /></div><br>
+ <!--submit   -->            <input type="submit" name="submit" value="Submit" onclick="validate()"/>
+  <!--reset-->            <input type="Reset" value="Reset" style="margin-left:90px" onclick="reset();" /><hr style="border-width:0px 0px 1px 0px;border-radius:20px"> </div>
+ 
+                <p>Note: * Fields are Manadatory </p>
+
+
+</body>
+</center>
+
+
+<head>
+
+  <script >
+
+          function validate() {
+                        
+      var em =document.getElementById("email");
+	   var pd =document.getElementById("pwd");
+      var repd =document.getElementById("repwd");
+	  var uname=document.getElementById("username");
+	  var mail=/([_][a-z][A-Z])([_][a-z][A-Z][0-9])*(@)([a-z])*(.)([a-z])*/;
+	  var pin=document.getElementById("ptc");
+	  var sur=document.getElementById("surname");
+	  var dob=document.getElementById("dob");
+	  var add=document.getElementById("address");
+	  
+                           if( em.value ==="") { alert("enter your email");} 
+                           if( pd.value !== repd.value) { 
+                                           alert("password did not match");} 
+                            if(uname.value==""){alert("username cannot be empty!");} 
+							if(pd.value==""){alert("password cannot be empty!");}
+							len=pd.length;
+							if(len<=6 && len>=0) {alert("password field must contain atleast 6 characters.");}
+                           if(mail.test(email)==false) { alert("invalid email format.");}
+						   if(uname.value==""||pd.value==""||repd.value==""||em.value==""||pin.value==""||sur.value==""||dob.value==""||add.value=="")
+						     {alert("* marked field is mandatory to be filled.");}
+			  
+			  }
+			  function reset(){alert("Really ?? All the fields will be reset to default values.");}
+  </script>
+</head>
+</html>
