@@ -1,0 +1,41 @@
+<html>
+  <head><title>loGiN..</title>
+  </head>
+<body background="background.jpg";style="background-repeat:no-repeat;  height:100%">
+<img src="login.png" style="padding-left:30%" height="250px"><hr>
+ <center> <div style="opacity:0.7; border:2px solid gray; border-radius:5px; width:25%;height:50%;
+               PADDING:20PX;  box-shadow: 10px 10px 10px gray; background-color:F6FADB ">
+    <form method="get" action="page1.php">
+        Username:&nbsp<input type="text" name="uname" value="" id="uname"> <br><br><br>
+        Password:&nbsp<input type="password" name="pwd" value="" id="pwd"><br><br><br>
+		<input type="submit" name="submit" value="Submit" onClick="validate()"   id="submit">&nbsp&nbsp&nbsp
+		<input type="reset"  value="Reset"    id="reset">&nbsp&nbsp&nbsp<br><br>&nbsp&nbsp&nbsp
+		<a href="register.html" id="register"> New User ? </a>&nbsp&nbsp&nbsp<br>
+		
+		
+		
+		
+    </form>
+  </div></center>
+<div style="position:absolute;top:10px;left:90% ">
+
+<a target="_blank" title="facebook" href="http://www.facebook.com/">
+		  <img alt="facebook" src="fb.png" border=0></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		  
+		 <a target="_blank" title="Google Plus" href="https://plus.google.com/"><img src="gplus.png" alt="Google PLus" /></a>
+</div>
+
+<script>
+  function validate(){
+     var un=document.getElementById("uname");
+	 var pwd=document.getElementById("pwd");
+	 if(un.value==''){alert("Username cannot be empty");}
+	 if(pwd.value==''){alert("password cannot be empty");}
+	 
+  
+  
+    }
+
+</script>
+  </body>
+</html>
